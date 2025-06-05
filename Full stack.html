@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkIfNumber(val) {
+        try {
+          // Checking if the value is a number using isNaN
+          if (isNaN(val)) {
+            // If true, we throw a custom error
+            throw new Error("THe value is  not a number", val);
+          } else {
+            // If the value is a number, output to the console
+            console.log("Got a number:", val);
+          }
+        } catch (error) {
+          // Catch any errors and output the error message to the console
+          console.error("Error caught:", error.message);
+        } finally {
+          // and at the end , we run the code regardless of the try/catch outcome
+          console.log("Function completed with value:", val);
+        }
+      }
+      // Exammples
+      checkIfNumber("Hello"); // String argument
+      checkIfNumber(42); // Number argument
+    </script>
+    <!-- SELF CHECK QUIZ
+1. What will the following regex expression return from the following words?
+Expression / ([a-e])\w+/g
+"Hope you enjoy JavaScript"
+
+      The regex will match any words that start from a to e
+      The output will be enjoy,because it starts with e
+
+2. Are cookies part of the document object?
+   
+      yes ,cookies are part of the document object in javascript and can be accessed through document.cookie
+
+3. What will the following code do to a JavaScript cookie?
+const mydate = new Date();
+mydate.setTime(mydate.getTime() - 1);
+document.cookie = "username=; expires=" + mydate.toGMTString();
+
+      This code is meant to delete a cookie by setting its expiration date to a time in the past.However,mydate is 
+      not defined in the provided code snippet, so it would lead to a reference error unless mydate is defined elsewhere
+      in the code
+
+4. What is the output in the console from the following code?
+const a = "hello world";
+(function () {
+const a = "JavaScript";
+})();
+console.log(a);
+
+      This code will give an error because you cannot reassign a constant variable
+
+5. What is the output in the console from the following code?
+<script>
+"use strict";
+myFun();
+console.log(a);
+function myFun() {
+a = "Hello World";
+}
+</script>
+
+      The output is b,a,c
+
+6. What is the output of the following code?
+console.log("a");
+setTimeout(() => {
+console.log("b");
+}, 0);
+console.log("c");
+
+        The output is b,a,c -->
+  </body>
+</html>
